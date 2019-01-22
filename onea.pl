@@ -67,33 +67,35 @@ main:- tests, testNepotism.
 % Hints: if you stay above 700 then the standard arithmetics can be inside 
 % Hints: for trivial little prefix, ostfix markers, use 1
 
-:- op(903,xfx,  has).
-:- op(902,xfx,  if).
+:- op(903,xfx,  if).
+:- op(902,fx,  rule).
 :- op(901,xfx,  then).
-:- op(900,yfx,  and).
-:- op(899,yfx,  or).
-:- op(889,yfx,  had).
-:- op(879,yfx,  in).
+:- op(900,yfx,  or).
+:- op(899,yfx,  and).
+:- op(898,fx,  not).
+:- op(897,yfx,  had).
+:- op(896,xfx,  has).
+:- op(895,yfx,  in).
 
 rule1 if a then b.
 
-rule2 if a then b.
+rule 2 if a then b.
 
-rule3 if a and b then c.
+rule 3 if a and b then c.
 
-rule4 if a and b and c then d.
+rule 4 if a and b and c then d.
 
-rule5 if a or b and c and d then e.
+rule 5 if a or b and c and d then e.
 
-rule6 if a or b and c and d or e then f.
+rule 6 if a or b and c and d or e then f.
 
-rule7 if a or b and c and d or not e then f.
+rule 7 if a or b and c and d or not e then f.
 
-rule8 if a or b and c and d or not e then f.
+rule 8 if a or b and c and d or not e then f.
 
-rule9 if a or not (b and c and d) or e then f.
+rule 9 if a or not (b and c and d) or e then f.
 
-rule10 if emp had job=_ then b.
+rule 10 if emp had job=_ then b.
 
 % the the left of the first had, we match on functor and id
 % "=" is inside "had"
@@ -336,4 +338,4 @@ allOps :- setof([P,A,X],current_op(P,A,X),L), prints(L).
 %[1200,xfx,:-]
 
 :- main.
-%:- halt.
+:- halt.
